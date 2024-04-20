@@ -1,0 +1,422 @@
+/* Reset css */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+}
+
+/* Define fonts */
+@font-face {
+    font-family: Lato-Regular; 
+    src: url('../fonts/Lato/Lato-Regular.ttf');
+}
+
+@font-face {
+    font-family: Lato-Bold;
+    src: url('../fonts/Lato/Lato-Bold.ttf');
+}
+
+@font-face {
+    font-family: Lato-Light;
+    src: url('../fonts/Lato/Lato-Light.ttf');
+}
+
+@font-face {
+    font-family: Lato-Italic;
+    src: url('../fonts/Lato/Lato-Italic.ttf');
+}
+
+/* Define variable */
+:root {
+    --primary-color: #444;
+    --secondary-color:#fff;
+    --third-color:rgb(27, 188, 155);
+    scroll-behavior: smooth;
+}
+
+
+/* Define inherit - kế thừa */
+body {
+font-family: Lato-Regular;
+color: var(--primary-color);
+}
+
+/* Define common - dùng chung */
+button {
+    font-size: 13px;
+    font-family: Lato-Bold;
+    color: var(--secondary-color);
+    background-color: var(--third-color);
+    border: none;
+    padding-left: 13px;
+    padding-right: 13px;
+    height: 37px;   
+    letter-spacing: 3px;
+}
+/* HEADER */
+.navbar-light .navbar-nav .nav-link {
+    color: var(--primary-color);
+    font-size: 14px;
+    margin-left: 7px;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+.navbar-light .navbar-nav li:first-child .nav-link{
+    margin-left: 0;
+}
+
+.navbar-light .navbar-nav .active.nav-link, .navbar-light .navbar-nav .nav-link:hover{
+    color: var(--secondary-color);
+    background-color: var(--third-color);
+}
+
+.navbar{
+    padding-top: 19px;
+    padding-bottom: 19px;
+}
+
+.navbar.fixed-top {
+    padding-top: 0;
+    padding-bottom: 0;
+    background-color: rgba(27, 188, 155, 0.6) !important;
+    animation: .3s menuAnimation;
+
+}
+
+@keyframes menuAnimation {
+    from{
+    opacity: 0;
+    transform: translateY(-100%);
+    }
+    to {
+    opacity:1;
+    transform: translateY(0%);
+    }
+}
+
+.dummy-padding-top {
+    padding-top: 95px;
+    
+}
+
+/* MAIN */
+/* HOME */
+.home{
+    padding-top: 71px;
+    padding-bottom: 82px;
+    background-image: url('../images/banner.jpg');
+    background-size: cover;
+    background-position: center;
+    color: var(--secondary-color);
+}
+
+.home H1{
+    font-size: 55px;
+    font-family: Lato-Light;
+    margin-bottom: 29px;
+}
+
+.home H1 span {
+    font-family: Lato-Bold;
+}
+
+.home p {
+    font-size: 18px;
+    font-family: Lato-Light;
+    margin: auto;
+    margin-bottom: 46px;
+    max-width: 576px;
+    
+}
+
+.home button {
+    
+    margin-bottom: 42px;
+}
+
+
+/* PORTFOLIO */ 
+.portfolio {
+    padding-top: 51px;
+    /* 61px-34px=27px */
+    padding-bottom: 27px;
+}
+
+.portfolio > .row {
+    max-width: 900px;
+    margin: auto;
+}
+.portfolio h2 {
+font-size: 28px;
+margin-bottom: 12px;
+}
+
+.portfolio p {
+    font-size: 16px;
+    margin-bottom: 35px;   
+}
+
+.portfolio button{
+    margin-bottom: 45px;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+/* .portfolio img {} */
+
+.portfolio .box {
+    background-color: red;
+    margin-bottom: 34px;
+    position: relative;
+    display: inline-block;
+}
+
+.portfolio .box .overlay {
+   background-image: url("../images/hover.png");
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--secondary-color);
+    border-radius: 50%;
+    /* opacity: 0; */
+    transform: scale(0);
+    transition: 1s ease;
+    /* Không cho .overlay nhận sự kiện pointer  */
+    /* Sự kiện này sẽ đc chuyển cho thẻ a */
+    pointer-events: none;
+}
+
+.portfolio .box .overlay span:nth-of-type(1){
+    width: 43px;
+    line-height: 45px;
+    background-image: url('../images/search.png');
+    display: inline-block;
+    border-radius: 50%;
+    font-size: 21px;
+    margin-bottom: 18px;
+    
+}
+
+.portfolio .box:hover  .overlay{
+    /* opacity: 1; */
+    transform: scale(1);
+}
+
+.portfolio .box .overlay span:nth-of-type(2){
+    font-size: 18px;
+    
+    
+}
+
+.portfolio .box .overlay span:nth-of-type(3){
+    font-size: 14px;
+}
+
+.portfolio button.active{
+    background-color: rgb(22, 160, 134);
+    color: white;
+}
+
+/* ABOUT */
+.about {
+    padding-top: 54px;
+    /* 74px-20px */
+    padding-bottom: 54px;
+    background-color: #16a086;
+}
+
+.about > .row {
+    max-width: 840px;
+    margin: auto;
+}
+
+.about h2 {
+    font-size: 28px;
+    margin-bottom: 12px;
+    color: var(--secondary-color);
+}
+
+.about > p {
+    font-size: 14px;
+    margin-bottom: 42px;
+    color: var(--secondary-color);
+}
+
+.about .box-infor {
+    padding-top: 18px;
+    padding-bottom: 18px;
+    width: 220px;
+    margin: auto;
+    background-color: var(--secondary-color);
+    margin-bottom: 20px;
+}
+
+.about .box-infor h3 {
+    font-size: 18px;
+    margin-bottom: 4px;
+}
+
+.about .box-infor em {
+    font-size: 14px;
+    font-family: Lato-Italic;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+.about .box-infor p{
+    font-size: 14px;
+    text-align: left;
+    padding-left: 10px;
+}
+
+.about .box{
+    position: relative;
+}
+
+.about .box .overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 180px;
+    height: 48px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-image: url(../images/hover.png) ;
+    opacity: 0;
+    transition: 1s ease;
+}
+
+.about .box .overlay:hover {
+    opacity: 1;
+}
+
+.about .box .overlay a{
+    font-size: 29px;
+    color: var(--secondary-color);
+}
+
+/* CONTACT */
+.contac {
+    padding-top: 49px;
+    padding-bottom: 60px;
+    background-color: #ecf0f1;
+}
+.contac > .row{
+    max-width: 940px;
+    margin: auto;
+}
+
+.contac h2 {
+    font-size: 28px;
+    margin-bottom:11px ;
+}
+
+.contac > p {
+    font-size: 14px;
+    margin-bottom:51px ;
+}
+
+.contac input,
+.contac textarea {
+    border: 2px solid #bec3c7;
+    border-radius: 0;
+    margin-bottom: 22px;
+}
+
+.contac input{
+    height: 47px;
+}
+
+.contac textarea{
+    height: 153px;
+}
+
+.contac ::placeholder {
+    font-size: 14px;
+    font-family: Lato-Italic ;
+    color:#999 ;
+}
+
+.contac button {
+    padding-left: 28px;
+    padding-right: 28px;
+}
+
+.contac h3 {
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.contac address {
+font-size: 14px;
+margin-bottom: 24px;
+display: flex;
+}
+
+/* chọn thẻ p nằm sau address */
+.contac address ~ p {
+    font-size: 14px;
+    margin-bottom: 19px;
+    
+}
+
+.contac address span {
+    padding-left: 5px;
+    margin-top: -3px;
+}
+/* FOOTER */
+footer{
+    height: 87px;
+    font-size: 14px;
+    background-color: #2d3e50;
+    color: var(--secondary-color);
+    display: flex;
+    align-items: center;
+}
+
+footer .back-to-top {
+    position: fixed;
+    right: 42px;
+    bottom: 20px;
+    width: 44px;
+    line-height: 44px;
+    background-color: var(--third-color);
+    color: var(--secondary-color);
+    text-align: center;
+
+}
+@media (max-width: 768px) {
+    .dummy-padding-top {
+        padding-top: 57px;
+    }
+
+    .navbar-collapse {
+        position: absolute;
+        top: 100%;
+        background-color: rgba(208, 208, 208, 0.8);
+        width: 100%;
+        left:0;
+    }
+    .navbar-light .navbar-nav .nav-link {
+        margin-left: 0;
+        margin-bottom: 5px;
+}
+.navbar-light .navbar-nav li:last-child .nav-link{
+    margin-bottom: 0;
+}
+
+.navbar{
+    padding-top: 0;
+    padding-bottom:0;
+}
+
+}
+    
